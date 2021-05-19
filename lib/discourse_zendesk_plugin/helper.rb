@@ -94,6 +94,14 @@ module DiscourseZendeskPlugin
       post.save_custom_fields
     end
 
+    def sync_post_attachments(post, comment)
+      attachments = comment['attachments']
+      return if attachments.blank?
+
+      # How to do this?
+
+    end
+
     def fetch_submitter(user)
       result = zendesk_client.users.search(query: user.email)
       return result.first if result.present? && result.size == 1

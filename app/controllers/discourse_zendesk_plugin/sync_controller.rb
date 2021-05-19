@@ -32,6 +32,8 @@ module DiscourseZendeskPlugin
             user: user,
             raw: latest_comment.body
           )
+          # Add Attachments here?
+          sync_post_attachments(post, latest_comment)
           update_post_custom_fields(post, latest_comment)
         end
       end
